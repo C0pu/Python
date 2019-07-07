@@ -1,0 +1,32 @@
+from tkinter import *
+from tkinter import Button
+
+i = ("ATTACKED")
+
+
+okno = Tk()
+
+
+label1 = Label(okno, text = "IP ")
+label2 = Label(okno, text = "PORT ")
+entry1 = Entry(okno)
+entry2 = Entry(okno)
+
+label1.grid(row = 0, sticky = N+E+S+W)
+label2.grid(row = 1)
+
+entry1.grid(row = 0, column = 1)
+entry2.grid(row = 1, column = 1)
+
+c = Checkbutton(okno, text = "Accept TOS, send attack ")
+c.grid(columnspan = 2, sticky = W)
+
+
+def wypisz (event):
+        while i <= "ATTACKED" :
+            print(str(i))
+d = Button(okno, text = " ATTACK!",)
+d.bind("<Button-1>", wypisz)
+d.grid(columnspan = 3, sticky = N+E+S+W)
+
+okno.mainloop()
